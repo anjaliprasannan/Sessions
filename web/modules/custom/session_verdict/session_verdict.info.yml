@@ -1,0 +1,6 @@
+name: Sessions Verdict
+type: module
+description: Session verdict field for sessions sessions.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

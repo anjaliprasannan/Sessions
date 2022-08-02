@@ -1,0 +1,20 @@
+uuid: 2c1afe33-fab5-48f8-88c4-1c9eece3742e
+langcode: en
+status: true
+dependencies:
+  module:
+    - sessions_core
+  theme:
+    - olivero
+id: countofproposedsessions
+theme: olivero
+region: hero
+weight: -7
+provider: null
+plugin: proposed_sessions_count
+settings:
+  id: proposed_sessions_count
+  label: 'Count of Proposed Sessions'
+  provider: sessions_core
+  label_display: '0'
+visibility: {  }

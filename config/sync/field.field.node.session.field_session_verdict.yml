@@ -1,0 +1,23 @@
+uuid: 9d9a8fde-5fb3-4524-91c9-cd31b9db19a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_verdict
+    - node.type.session
+  module:
+    - options
+id: node.session.field_session_verdict
+field_name: field_session_verdict
+entity_type: node
+bundle: session
+label: 'Session Verdict'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: proposed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

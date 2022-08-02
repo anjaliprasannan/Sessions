@@ -1,0 +1,6 @@
+sessions_core.settings:
+  title: Session Settings
+  description: Configure settings for session submissions.
+  parent: system.admin_config_content
+  route_name: sessions_core.settings
+  weight: 10

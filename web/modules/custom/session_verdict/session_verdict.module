@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Sessions Verdict module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter
+ */
+function session_verdict_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $roles = \Drupal::currentUser()->getRoles();
+
+  if ($form_id == "node_session_edit_form") {
+
+    if (in_array("reviewer", $roles, TRUE) || in_array("administrator", $roles, TRUE)) {
+      $form['field_session_verdict']['#access'] = TRUE;
+    }
+    else {
+      $form['field_session_verdict']['#access'] = FALSE;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Sessions core module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter
+ */
+function sessions_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'node_session_form') {
+
+    $form['#validate'][] = 'sessions_form_validate';
+  }
+}
+
+/**
+ * Defines function sessions_form_validate
+ */
+function sessions_form_validate($form, &$form_state) {
+  $max_sessions = 2;
+  $current_user_id = \Drupal::currentUser()->id();
+
+  $session_nodes = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadByProperties([
+        'type' => 'session',
+        'uid' => $current_user_id,
+    ]);
+
+  if (\Drupal::config('sessions_core.settings')->get('sessions_limit')) {
+    $max_sessions = \Drupal::config('sessions_core.settings')->get('sessions_limit');
+  }
+
+  if (count($session_nodes) >= $max_sessions) {
+    $form_state->setErrorByName('title', t('You have reached the maximum limit to add sessions!!!'));
+  }
+
+}

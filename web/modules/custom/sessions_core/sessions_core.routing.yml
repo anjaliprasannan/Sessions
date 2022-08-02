@@ -1,0 +1,7 @@
+sessions_core.settings:
+  path: '/admin/config/content/sessions'
+  defaults:
+    _title: 'Session Settings'
+    _form: 'Drupal\sessions_core\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

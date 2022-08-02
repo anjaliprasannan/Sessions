@@ -1,0 +1,17 @@
+uuid: d1ac59c7-d3bb-46e0-ac70-4e206930b8f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Session
+type: session
+description: 'Use <em>session</em> to submit a session for the camp.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

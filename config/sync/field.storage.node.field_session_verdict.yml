@@ -1,0 +1,30 @@
+uuid: 0f71b6a6-7251-45c8-b71f-db2bfcbc4934
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_session_verdict
+field_name: field_session_verdict
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: proposed
+      label: Proposed
+    -
+      value: selected
+      label: Selected
+    -
+      value: cancelled
+      label: Cancelled
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
